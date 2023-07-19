@@ -1,0 +1,19 @@
+{
+  "name": "phonebook-backend",
+  "version": "1.0.0",
+  "description": "This repo consists on the part3 of fullstack bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HectorMtz22/fullstack-open-part-3.git"
+  },
+  "author": "Hector Mtz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HectorMtz22/fullstack-open-part-3/issues"
+  },
+  "homepage": "https://github.com/HectorMtz22/fullstack-open-part-3#readme"
+}
