@@ -4,6 +4,8 @@
   "description": "This repo consists on the part3 of fullstack bootcamp",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/HectorMtz22/fullstack-open-part-3/issues"
   },
-  "homepage": "https://github.com/HectorMtz22/fullstack-open-part-3#readme"
+  "homepage": "https://github.com/HectorMtz22/fullstack-open-part-3#readme",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }
