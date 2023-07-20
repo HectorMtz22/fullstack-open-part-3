@@ -32,6 +32,21 @@ app.get('/api/persons', (req, res) => {
   res.json(data)
 })
 
+app.get('/api/persons/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+  console.log('Person id given: ', id)
+  console.log('Typeof ', typeof id)
+  const person = data.find((x) => x.id === id)
+  if (!id) {
+    return res.status(400).send('<h1>Bad Request</h1>')
+  }
+  if (!person) {
+    console.log(`Id ${id} not found`)
+    return res.status(404).send('<h1>Not Found</h1>')
+  }
+  res.json(person)
+})
+
 app.get('/info', (req, res) => {
   const date = new Date()
   res.send(`
