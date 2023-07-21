@@ -47,11 +47,11 @@ let data = [
   }
 ]
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Hola Mundo')
 })
 
-app.get('/api/persons', (req, res) => {
+app.get('/api/persons', (_, res) => {
   res.json(data)
 })
 
@@ -100,7 +100,7 @@ app.delete('/api/persons/:id', (req, res) => {
   res.status(204).end()
 })
 
-app.get('/info', (req, res) => {
+app.get('/info', (_, res) => {
   const date = new Date()
   res.send(`
     <p>Phonebook has info for ${data.length} people</p>
@@ -108,7 +108,7 @@ app.get('/info', (req, res) => {
   `)
 })
 
-const unknownEndpoint = (request, response) => {
+const unknownEndpoint = (_, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
 
