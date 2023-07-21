@@ -7,6 +7,16 @@ const generateId = () => {
   return parseInt(Math.random() * 100000000)
 }
 
+const requestLogger = (request, response, next) => {
+  console.log('Method:', request.method)
+  console.log('Path:  ', request.path)
+  console.log('Body:  ', request.body)
+  console.log('---')
+  next()
+}
+
+app.use(requestLogger)
+
 let data = [
   {
     id: 1,
@@ -42,7 +52,7 @@ app.post('/api/persons', (req, res) => {
   const body = req.body
   if (!body.name) return res.status(400).json({ error: 'Name is missing' })
   if (!body.number) return res.status(400).json({ error: 'Number is missing' })
-  console.log(body)
+  // console.log(body)
 
   // Check if there arent any name duplicates
   const matched = data
