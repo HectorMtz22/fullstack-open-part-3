@@ -16,7 +16,13 @@ const generateId = () => {
 //   next()
 // }
 
-app.use(morgan('tiny'))
+// * Morgan logging
+// ? Create new token for body requests
+// ! it can be dangerous since we may have sensitive data logged
+morgan.token('body', (req) => JSON.stringify(req.body))
+
+// ? Tiny string + body
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 let data = [
   {
